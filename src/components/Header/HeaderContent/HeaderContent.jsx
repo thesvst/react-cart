@@ -4,12 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faEnvelope, faPhone, faShoppingCart, faUser} from '@fortawesome/free-solid-svg-icons'
 
 class HeaderContent extends Component {
-    constructor() {
-        super();
-        this.state = {}
+    constructor(props) {
+        super(props);
+        this.state = {
+            price: 0.00,
+            currency: 'zł',
+            products: this.props.cart
+        }
     }
     logoSrc = require('../../../assets/images/logo.png');
     render(){
+        const { price, currency, products } = this.state;
         return (
             <div className="header_content">
                 <div className="header_content_logo">
@@ -25,8 +30,10 @@ class HeaderContent extends Component {
                 </div>
                 <div className="header_content_cart">
                     <div className="header_content_cart_price">
-                        <span className="price">20,00</span>
-                        <span className="currency">zł</span>
+                        <span className="price">
+                            {price.toString().replace('.', ',')}
+                        </span>
+                        <span className="currency">{currency}</span>
                     </div>
                     <FontAwesomeIcon icon={faShoppingCart}/>
                 </div>

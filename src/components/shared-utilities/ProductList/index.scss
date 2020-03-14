@@ -3,13 +3,54 @@
     margin:25px auto;
     display: flex;
     flex-wrap: wrap;
+      justify-content: space-between;
     .product_list_item{
-      flex-basis: 25%;
+      flex-basis: 21%;
+      box-sizing: border-box;
+      list-style: none;
+      margin-bottom: 50px;
         .product_list_item_image{
+            border-radius: 5px;
             width: 100%;
-            background-image: url(https://source.unsplash.com/featured/?food);
             height: 250px;
-            background-size: cover;
+            margin:0 auto;
+            background-size: auto 100%;
+            background-position: center;
+            cursor: pointer;
+            transition: .25s ease all;
+          &:hover{
+            background-size: auto 120%;
+          }
         }
+      .product_list_item_name{
+        text-align: center;
+        padding:15px;
+        font-weight: bold;
+        box-sizing: border-box;
+      }
+      .product_list_item_price{
+        color:red;
+        font-weight: bold;
+        text-align: center;
+      }
+      .product_list_item_add_to_cart{
+        width:90%;
+        display: block;
+        outline:none;
+        border:none;
+        margin:15px auto;
+        padding:10px;
+        box-sizing: border-box;
+        color:#fff;
+        border-radius: 5px;
+        background-color:$green_dark;
+        transition: .25s ease all;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover{
+          background-color:$green_light;
+          transform: scale(.95);
+        }
+      }
     }
 }

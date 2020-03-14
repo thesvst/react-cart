@@ -9,7 +9,7 @@ class Header extends Component {
         return (
             <div className="header">
                 <TopBar/>
-                <HeaderContent/>
+                <HeaderContent cart={this.props.cart}/>
                 <NavigationMenu/>
             </div>
         )
