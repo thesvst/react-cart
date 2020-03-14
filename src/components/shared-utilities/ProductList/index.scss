@@ -1,0 +1,15 @@
+.product_list{
+    width:90%;
+    margin:25px auto;
+    display: flex;
+    flex-wrap: wrap;
+    .product_list_item{
+      flex-basis: 25%;
+        .product_list_item_image{
+            width: 100%;
+            background-image: url(https://source.unsplash.com/featured/?food);
+            height: 250px;
+            background-size: cover;
+        }
+    }
+}

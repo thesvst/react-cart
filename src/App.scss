@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap');
+$green_light: #00914D;
+$green_dark: #005D31;
+body {
+  font-family: 'Baloo Chettan 2', cursive;
+}
+@import './components/Header/TopBar';
+@import './components/Header/HeaderContent';
+@import './components/Header/NavigationMenu';
+
+@import './components/shared-utilities/ProductList';
