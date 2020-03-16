@@ -3,13 +3,14 @@ import './App.scss';
 import Header from "./components/Header/Header";
 import ProductList from "./components/shared-utilities/ProductList/ProductList";
 
+import { store } from "./index";
+import {addProduct, addProducts, incrementProduct} from "./duck/actions";
+
 class App extends Component {
     constructor() {
         super();
         this.state = {
-            products: [],
             sliderProducts: [],
-            cart: []
         }
     }
     /* Randomly push products to array for sliders/product list  */
@@ -23,14 +24,17 @@ class App extends Component {
         this.setState({sliderProducts: productsArray})
     }
     addToCart = (id) => {
-        const { products, cart } = this.state;
-        const isInArray = this.state.cart.find(x => x.id === id);
-        // If product exists in cart increase its amount
-        if(isInArray) {
-            // zwiekszac amount istniejacego
-        }else{
-            this.setState(prevState => ({cart: [...prevState.cart, products[id - 1]]}))
+        const storeProds = store.getState().productsList;
+        const cartProds = store.getState().productsInCart;
+        const isInArray = cartProds.find(x => x.id === id);
+        if(isInArray) { // If product exists in cart increase its amount.
+            // store.dispatch(incrementProduct(id - 1, storeProds))
+            store.dispatch(incrementProduct(id, cartProds));
+        }else{ // Else just add it.
+            // this.setState(prevState => ({cart: [...prevState.cart, products[id - 1]]}))
+            store.dispatch(addProduct(id - 1, storeProds));
         }
+
     }
     componentDidMount() {
         /* Fetch for the products API */
@@ -42,8 +46,8 @@ class App extends Component {
         /* Concat arrays and add images to products depending on its indexes */
         Promise.all([prom1,prom2,prom3,prom4]).then(data => {
             const images = [...data[1].hits, ...data[2].hits, ...data[3].hits];
-            const arrayWithImages = JSON.parse(data[0].contents).map((prod, index) => prod = {...prod, imageUrl: images[index].largeImageURL, amount:0});
-            this.setState({products: arrayWithImages});
+            const arrayWithImages = JSON.parse(data[0].contents).map((prod, index) => prod = {...prod, imageUrl: images[index].largeImageURL, amount:1});
+            store.dispatch(addProducts(arrayWithImages));
             this.setSliderProducts(arrayWithImages);
         })
     }
@@ -52,7 +56,7 @@ class App extends Component {
     const { addToCart } = this;
       return (
           <div className="shopping_cart_wrapper">
-            <Header cart={cart}/>
+            <Header/>
             <div className="main_content">
                 <ProductList data={{sliderProducts, addToCart}}/>
             </div>
@@ -64,9 +68,6 @@ class App extends Component {
 export default App;
 
 // TO DO
-// 1. Dodawanie do koszyka (jesli istnieje, to zwiekszac liczbe)
-// 2. Mozliwosc dodawania/usuwania z koszyka + zmiana ilosci
-// 3. Wyszukiwarka (5prod) + pokaz wiecej
-// 4. Podstrona do szukajki
-// 5. Podstrona produktu
-// 6. Podstrona koszyka
+// 1. Koszyk zwiekszanie ilosci
+// 3. Cena
+// 4. RWD

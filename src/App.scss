@@ -6,6 +6,37 @@ body {
 }
 @import './components/Header/TopBar';
 @import './components/Header/HeaderContent';
-@import './components/Header/NavigationMenu';
 
 @import './components/shared-utilities/ProductList';
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $green_light;
+  outline: 1px solid $green_light;
+}
+header_content_searchbar_dropdown::-webkit-scrollbar {
+  width: 5px;
+}
+header_content_searchbar_dropdown::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+header_content_searchbar_dropdown::-webkit-scrollbar-thumb {
+  background-color: $green_light;
+  outline: 1px solid $green_light;
+}
+header_content_cart_dropdown::-webkit-scrollbar {
+  width: 5px;
+}
+header_content_cart_dropdown::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+header_content_cart_dropdown::-webkit-scrollbar-thumb {
+  background-color: $green_light;
+  outline: 1px solid $green_light;
+}
