@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import ProductList from "./components/shared-utilities/ProductList/ProductList";
 
 import { store } from "./index";
-import {addProduct, addProducts, incrementProduct} from "./duck/actions";
+import { addProduct, addProducts } from "./duck/actions";
 
 class App extends Component {
     constructor() {
@@ -43,7 +43,7 @@ class App extends Component {
         })
     }
     render(){
-    const { sliderProducts, cart } = this.state;
+    const { sliderProducts } = this.state;
     const { addToCart } = this;
       return (
           <div className="shopping_cart_wrapper">
@@ -55,8 +55,4 @@ class App extends Component {
       );
   }
 }
-
 export default App;
-
-// TO DO
-// 4. RWD

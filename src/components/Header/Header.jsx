@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import TopBar from './TopBar/TopBar';
 import HeaderContent from './HeaderContent/HeaderContent';
