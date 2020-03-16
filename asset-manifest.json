@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/thesvst.github.io/react-cart/static/css/main.fa417727.chunk.css",
+    "main.js": "/thesvst.github.io/react-cart/static/js/main.5dd78162.chunk.js",
+    "main.js.map": "/thesvst.github.io/react-cart/static/js/main.5dd78162.chunk.js.map",
+    "runtime-main.js": "/thesvst.github.io/react-cart/static/js/runtime-main.139f3a26.js",
+    "runtime-main.js.map": "/thesvst.github.io/react-cart/static/js/runtime-main.139f3a26.js.map",
+    "static/js/2.149f3a21.chunk.js": "/thesvst.github.io/react-cart/static/js/2.149f3a21.chunk.js",
+    "static/js/2.149f3a21.chunk.js.map": "/thesvst.github.io/react-cart/static/js/2.149f3a21.chunk.js.map",
+    "index.html": "/thesvst.github.io/react-cart/index.html",
+    "precache-manifest.8cf79e9398314b86e054b701b8e7e694.js": "/thesvst.github.io/react-cart/precache-manifest.8cf79e9398314b86e054b701b8e7e694.js",
+    "service-worker.js": "/thesvst.github.io/react-cart/service-worker.js",
+    "static/css/main.fa417727.chunk.css.map": "/thesvst.github.io/react-cart/static/css/main.fa417727.chunk.css.map",
+    "static/js/2.149f3a21.chunk.js.LICENSE.txt": "/thesvst.github.io/react-cart/static/js/2.149f3a21.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/thesvst.github.io/react-cart/static/media/header_bg.33cb7c36.jpg",
+    "static/media/logo.png": "/thesvst.github.io/react-cart/static/media/logo.e0deeafc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.139f3a26.js",
+    "static/js/2.149f3a21.chunk.js",
+    "static/css/main.fa417727.chunk.css",
+    "static/js/main.5dd78162.chunk.js"
+  ]
+}
