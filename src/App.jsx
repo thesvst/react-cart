@@ -25,16 +25,7 @@ class App extends Component {
     }
     addToCart = (id) => {
         const storeProds = store.getState().productsList;
-        const cartProds = store.getState().productsInCart;
-        const isInArray = cartProds.find(x => x.id === id);
-        if(isInArray) { // If product exists in cart increase its amount.
-            // store.dispatch(incrementProduct(id - 1, storeProds))
-            store.dispatch(incrementProduct(id, cartProds));
-        }else{ // Else just add it.
-            // this.setState(prevState => ({cart: [...prevState.cart, products[id - 1]]}))
-            store.dispatch(addProduct(id - 1, storeProds));
-        }
-
+        store.dispatch(addProduct(id, storeProds));
     }
     componentDidMount() {
         /* Fetch for the products API */
@@ -68,6 +59,4 @@ class App extends Component {
 export default App;
 
 // TO DO
-// 1. Koszyk zwiekszanie ilosci
-// 3. Cena
 // 4. RWD

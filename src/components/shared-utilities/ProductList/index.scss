@@ -3,12 +3,23 @@
     margin:25px auto;
     display: flex;
     flex-wrap: wrap;
-      justify-content: space-between;
+    justify-content: space-between;
     .product_list_item{
+    position: relative;
       flex-basis: 21%;
       box-sizing: border-box;
       list-style: none;
       margin-bottom: 50px;
+      padding-bottom: 50px;
+      @media(max-width:1200px){
+        flex-basis: 30%;
+      }
+      @media(max-width:680px){
+        flex-basis: 48%;
+      }
+      @media(max-width:480px){
+        flex-basis: 90%;
+      }
         .product_list_item_image{
             border-radius: 5px;
             width: 100%;
@@ -38,7 +49,6 @@
         display: block;
         outline:none;
         border:none;
-        margin:15px auto;
         padding:10px;
         box-sizing: border-box;
         color:#fff;
@@ -47,6 +57,9 @@
         transition: .25s ease all;
         font-weight: bold;
         cursor: pointer;
+        position: absolute;
+        left:5%;
+        bottom:0;
         &:hover{
           background-color:$green_light;
           transform: scale(.95);

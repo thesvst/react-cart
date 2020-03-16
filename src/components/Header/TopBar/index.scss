@@ -9,6 +9,10 @@
   .top_bar_half{
     flex-basis: 50%;
     display: flex;
+    @media(max-width:1024px){
+      flex-basis: unset;
+      flex:auto;
+    }
     .top_bar_half_item{
       margin-right: 10px;
       position: relative;
@@ -46,6 +50,13 @@
         padding-right: 0;
         &:after{
           content: unset;
+        }
+      }
+    }
+    &.left{
+      @media(max-width:540px){
+        span{
+          display: none;
         }
       }
     }

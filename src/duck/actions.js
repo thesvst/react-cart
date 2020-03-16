@@ -6,6 +6,7 @@ export const DECREMENT = 'DECREMENT';
 export const DELETE = 'DELETE';
 export const ADD_PRODUCTS = 'ADD_PRODUCTS';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const UPDATE_PRICE = 'UPDATE_PRICE'
 
 export const incrementProduct = (id, prodsArr) => {
     return {
