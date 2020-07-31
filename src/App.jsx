@@ -28,12 +28,14 @@ class App extends Component {
         store.dispatch(addProduct(id, storeProds));
     }
     componentDidMount() {
+        const API_KEY = '15600885-ededef8c94654366119e37af4'
+        const DATA_URL = 'http://kamilbartusik.pl/data.json'
         /* Fetch for the products API */
-        const prom1 = fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://www.reasonapps.pl/data.json')}`).then(res => res.json())
+        const prom1 = fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(DATA_URL)}`).then(res => res.json())
         /* Products have no images... so let's add them! */
-        const prom2 = fetch('https://pixabay.com/api/?key=15600885-ededef8c94654366119e37af4&q=dinner&image_type=photo&per_page=200&page=1').then(res => res.json())
-        const prom3 = fetch('https://pixabay.com/api/?key=15600885-ededef8c94654366119e37af4&q=dinner&image_type=photo&per_page=200&page=2').then(res => res.json())
-        const prom4 = fetch('https://pixabay.com/api/?key=15600885-ededef8c94654366119e37af4&q=dinner&image_type=photo&per_page=100&page=3').then(res => res.json())
+        const prom2 = fetch(`https://pixabay.com/api/?key=${API_KEY}&q=dinner&image_type=photo&per_page=200&page=1`).then(res => res.json())
+        const prom3 = fetch(`https://pixabay.com/api/?key=${API_KEY}&q=dinner&image_type=photo&per_page=200&page=2`).then(res => res.json())
+        const prom4 = fetch(`https://pixabay.com/api/?key=${API_KEY}&q=dinner&image_type=photo&per_page=100&page=3`).then(res => res.json())
         /* Concat arrays and add images to products depending on its indexes */
         Promise.all([prom1,prom2,prom3,prom4]).then(data => {
             const images = [...data[1].hits, ...data[2].hits, ...data[3].hits];
