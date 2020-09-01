@@ -1,6 +1,3 @@
-
-import {store} from "../index";
-
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const DELETE = 'DELETE';
